@@ -262,15 +262,17 @@ textarea {
 }
 
 #capturedImage {
-    max-width: 100%;
-    height: auto; /* Defina a altura inicial para corresponder à do vídeo */
-    height: auto; /* Ajusta automaticamente a altura da imagem para manter a proporção */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção e preenche o contêiner */
+    max-height: 45vh; /* Limita a altura a 100% da altura da tela, se necessário */
 }
 
-video{
-    max-width: 100%;
-    width: auto;
-    height: auto; 
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção e preenche o contêiner */
+    max-height: 45vh; /* Limita a altura a 100% da altura da tela, se necessário */
 }
 
 
