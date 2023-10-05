@@ -9,7 +9,9 @@ var capturedImage = document.getElementById('capturedImage');
 var submitButton = document.getElementById('submitButton');
 var textInput = document.getElementById('textInput');
 
-navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+navigator.mediaDevices.getUserMedia({ video: { 
+    facingMode: 'environment' // Defina a restrição para a câmera principal
+} }).then(stream => {
     video.srcObject = stream;
     video.play();
     submitButton.disabled = true;
