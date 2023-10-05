@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+
+
+/* Estilos para a tela de transição */
+#transition-screen {
+    font-family: 'Inter', sans-serif;
+    margin: 0; /* Remova as margens padrão para evitar barras de rolagem */
+    padding: 0; /* Remova o preenchimento padrão */
+    display: flex; /* Use flexbox para alinhar verticalmente */
+    justify-content: center; /* Centralize horizontalmente */
+    align-items: center; /* Centralize verticalmente */
+    height: 100vh; /* Defina a altura igual à altura da janela de visualização (viewport) */
+}
+
+#transition-screen img {
+    max-width: 100%; /* Para garantir que a imagem não ultrapasse a largura da div */
+}
+
+body.green-background {
+    background-color: #004A2F; /* Define a cor de fundo para verde */
+    margin: 0; /* Remove margens padrão do corpo */
+    padding: 0; /* Remove preenchimento padrão do corpo */
+    overflow: hidden; /* Evita barras de rolagem */
+}
+
+
+/* Estilos gerais/main */
+
+    /* HEADER */
+    /* NAV BAR */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    background-color: #004A2F;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+
+.button-logo {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: left;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 1.75rem;
+}
+
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 0; /* Posicione o menu no topo da página */
+    right: 0; /* Posicione o menu à direita */
+    background-color: rgba(0, 74, 47, 0.75); /* Adicione a transparência aqui */
+    width: 100%; /* Faça o menu ocupar toda a largura */
+    z-index: 2; /* Defina uma camada superior para o menu */
+    margin-top: 90px;
+    
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.2rem;
+    }
+    .nav-item {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+        position: absolute;
+        top: 0; /* Posicione o ícone no topo da página */
+        right: 0; /* Posicione o ícone à direita */
+        margin: 10px;
+        z-index: 3; /* Defina uma camada superior para o ícone */
+    }
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex; 
+        align-items: center; 
+        justify-content: right; 
+        margin: 20px;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .mobile-menu .nav-item {
+        display: block;
+        padding-top: 2rem;
+    }
+    .open {
+        display: block;
+    }
+
+}
+
+
+
+
+    /* CORPO HTML_DENUNCIA*/ 
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0; /* Remova as margens padrão para evitar barras de rolagem */
+    padding: 0; /* Remova o preenchimento padrão */
+    overflow: hidden; /* Evita barras de rolagem */
+    position: relative;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+#info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
+    gap: 10px; /* Espaço entre as colunas */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    margin: 10px auto; /* Centraliza verticalmente e define margens */
+    max-width: 80%; /* Define a largura máxima */
+    height: 20vh;
+    margin-top: 2rem;
+}
+
+.info {
+    margin: 10px; /* Espaçamento entre informações */
+    display: flex;
+    font-size: 26px;
+    flex-direction: column; /* Coloca os ícones acima dos valores */
+    align-items: center; /* Centraliza verticalmente o conteúdo das divs .info */
+    padding: 10px; /* Espaçamento interno das divs .info */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    height: 30vh;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#map {
+    width: 100%;
+    height: 70vh; /* Reduza a altura do mapa para ficar mais próximo das informações */
+    margin-top: 20px; /* Adicione uma margem superior para separar o mapa das informações */
+    margin-bottom: 2rem;
+}
+#btn-container {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Adicione uma margem inferior para separar o botão do mapa */
+}
+#btn-container button {
+    padding: 10px 20px;
+}
+.icon {
+    align-items: center; /* Adicione margem à direita do ícone para separá-lo do texto */
+}
+button {
+    border: none;
+    border-radius: 99px;
+    color: white;
+    background: #004A2F;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 150px;
+    height: 40px;
+
+}
+
+button.special-button {
+    border: none;
+    border-radius: 50%; /* Para tornar os botões redondos */
+    color: white;
+    background: #004A2F;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+}
+
+button.special-button:disabled {
+    background: orangered;
+}
+
+.button-container {
+    display: inline-block;
+    margin: 0 5px; /* Adiciona espaço horizontal entre os contêineres */
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+}
+
+.button-row {
+    display: flex; /* Torna os contêineres elementos flexíveis */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+}
+
+.btn-main {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+/* Estilos Camera */
+
+textarea {
+    border-radius: 1rem;
+    padding: 1.1rem;
+    justify-content: center;
+    height: 15vh;
+    width: 83.5%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.media-container {
+    width: 100%;
+    height: 50vh; /* Defina a altura inicial para corresponder à do vídeo */
+    position: relative; /* Adicione position: relative; para posicionar os elementos filhos */
+}
+
+#capturedImage {
+    max-width: 100%;
+    height: auto; /* Defina a altura inicial para corresponder à do vídeo */
+    height: auto; /* Ajusta automaticamente a altura da imagem para manter a proporção */
+}
+
+video{
+    max-width: 100%;
+    width: auto;
+    height: auto; 
+}
+
+
+
+
+/* GALERIA DE DENUNCIAS  */
+body.scroll-enabled {
+    overflow: auto; /* Habilita a barra de rolagem */
+}
+.galeria {
+    display: flex;
+    flex-direction: column; /* Define a direção para coluna (uma abaixo da outra) */
+    align-items: left; /* Centralize as imagens horizontalmente */
+    border-bottom: 1px solid #ccc; /* Adicione uma borda inferior com cor cinza */
+}
+
+.imagem-com-texto {
+    display: flex; /* Usar flexbox para posicionar a imagem e o texto lado a lado */
+    align-items: center; /* Centralize verticalmente */
+    margin-bottom: 10px; /* Adicione margem inferior para espaçamento entre as imagens */
+}
+
+.imagem-com-texto img {
+    width: 200px; /* Defina a largura da imagem */
+    height: 200px; /* Mantenha a proporção original da altura */
+    margin-right: 10px; /* Adicione margem à direita da imagem para separá-la do texto */
+}
+
+.imagem-com-texto p {
+    margin: 0; /* Remova a margem padrão do parágrafo */
+}
+
+
+
+/*  SOBRE  */
+.developer-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
+    gap: 20px; /* Espaçamento entre as fotos */
+    justify-content: center; /* Centralize o conteúdo horizontalmente */
+    align-items: center; /* Centralize o conteúdo verticalmente */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+}
+
+.developer {
+    text-align: center; /* Centralize o conteúdo dentro de cada célula */
+}
+
+/* Estilize as imagens, se necessário */
+.developer img {
+    margin-top: 2rem;
+    height: 150px;
+    width: 150px; /* Defina a largura máxima das imagens */
+}
+
+.about-h2 {
+    font-family: 'Inter', sans-serif;
+    text-align: center; /* Centralize o texto */
+    font-family: 'Inter', sans-serif; /* Defina a fonte como Sans-Serif */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+}
+.about-p{
+    text-align: justify;
+    font-family: 'Inter', sans-serif; 
+}
+.enterprise-info{
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.p-send{
+    text-align: center;
+    font-family: 'Inter', sans-serif; 
+    color: white;
+    font-size: 26px;
+
+}
+
