@@ -1,5 +1,5 @@
 // Tempo em milissegundos para a transição
-const transitionTime = 3000; // 3 segundos
+const transitionTime = 2000; // 2 segundos
 
 // Função para redirecionar para a próxima tela após o tempo de transição
 function redirectToNextScreen() {
