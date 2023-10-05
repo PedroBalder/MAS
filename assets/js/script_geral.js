@@ -17,8 +17,8 @@ const redirectButton = document.getElementById('redirectButton');
 
 // Adicione um ouvinte de evento de clique ao botão
 redirectButton.addEventListener('click', function () {
-    // Redirecione para main.html
-    window.location.href = 'html_main.html';
+    // Redirecione para index.html
+    window.location.href = 'index.html';
 });
 
 
