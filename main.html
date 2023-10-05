@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Visualização de Informações e Câmera</title>
+    <link rel="icon" href="assets/img/icones_MAS/Assets.xcassets/AppIcon.appiconset/_/40.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+<script>navigator.serviceWorker.register("service-worker.js")</script> 
+<link rel="manifest" href="manifest.json" />
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+        <nav class="nav-bar">
+            <div>
+                <a href="main.html" class="button-logo"><img src="assets/img/icones_MAS/Assets.xcassets/AppIcon.appiconset/_/57.png" alt=""></a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="html_denuncias_realizadas.html" class="nav-link">Denúncias</a></li>
+                    <li class="nav-item"><a href="html_denuncia.html" class="nav-link">Abrir Denúncia</a></li>
+                    <li class="nav-item"><a href="html_sobre.html" class="nav-link">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="main.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="html_denuncias_realizadas.html" class="nav-link">Denúncias</a></li>
+                <li class="nav-item"><a href="html_denuncia.html" class="nav-link">Abrir Denúncia</a></li>
+                <li class="nav-item"><a href="html_sobre.html" class="nav-link">Sobre</a></li>
+            </ul>
+        </div>
+    </header>
+
+        
+    
+
+    <!-- CORPO DO APP-->
+    <main>
+        <div id="container">
+            
+            <div id="info-container">
+                <div class="info">
+                    <span class="icon"><i class="fas fa-thermometer-half"></i></span>
+                    <p id="temperatura"></p>
+                </div>
+                <div class="info">
+                    <span class="icon"><i class="fas fa-tint"></i></span>
+                    <p id="umidade"></p>
+                </div>
+            </div>
+            <div id='map'></div>
+            <div id="btn-container">
+                <a href="html_denuncia.html" class="btn-main">
+                    <button>Abrir Denúncia</button>
+                </a>
+                <a href="tel:+558132013800" class="btn-main">
+                    <button>Ligar para Ibama</button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU7Y3waGbIoZmPcHMM45bKmCiDNzYfoo4&libraries=places&callback=initMap" async defer></script>    
+    <script src="assets/js/script_mapa.js"></script>  
+    <script src="assets/js/script_temperatura.js"></script>
+    <script src="assets/js/script_geral.js"></script>
+
+</body>
+</html>
