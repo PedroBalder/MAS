@@ -2,26 +2,26 @@
 
 
 
-/* Estilos para a tela de transição */
+
 #transition-screen {
     font-family: 'Inter', sans-serif;
-    margin: 0; /* Remova as margens padrão para evitar barras de rolagem */
-    padding: 0; /* Remova o preenchimento padrão */
-    display: flex; /* Use flexbox para alinhar verticalmente */
-    justify-content: center; /* Centralize horizontalmente */
-    align-items: center; /* Centralize verticalmente */
-    height: 100vh; /* Defina a altura igual à altura da janela de visualização (viewport) */
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
 }
 
 #transition-screen img {
-    max-width: 100%; /* Para garantir que a imagem não ultrapasse a largura da div */
+    max-width: 100%; 
 }
 
 body.green-background {
-    background-color: #004A2F; /* Define a cor de fundo para verde */
-    margin: 0; /* Remove margens padrão do corpo */
-    padding: 0; /* Remove preenchimento padrão do corpo */
-    overflow: hidden; /* Evita barras de rolagem */
+    background-color: #004A2F; 
+    margin: 0; 
+    padding: 0;
+    overflow: hidden; 
 }
 
 
@@ -89,11 +89,11 @@ header {
 .mobile-menu {
     display: none;
     position: absolute;
-    top: 0; /* Posicione o menu no topo da página */
-    right: 0; /* Posicione o menu à direita */
-    background-color: rgba(0, 74, 47, 0.75); /* Adicione a transparência aqui */
-    width: 100%; /* Faça o menu ocupar toda a largura */
-    z-index: 2; /* Defina uma camada superior para o menu */
+    top: 0; 
+    right: 0; 
+    background-color: rgba(0, 74, 47, 0.75);
+    width: 100%; 
+    z-index: 2; 
     margin-top: 90px;
     
 }
@@ -108,10 +108,10 @@ header {
     .mobile-menu-icon {
         display: block;
         position: absolute;
-        top: 0; /* Posicione o ícone no topo da página */
-        right: 0; /* Posicione o ícone à direita */
+        top: 0; 
+        right: 0; 
         margin: 10px;
-        z-index: 3; /* Defina uma camada superior para o ícone */
+        z-index: 3; 
     }
     .mobile-menu-icon button {
         background-color: transparent;
@@ -145,9 +145,9 @@ header {
 
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0; /* Remova as margens padrão para evitar barras de rolagem */
-    padding: 0; /* Remova o preenchimento padrão */
-    overflow: hidden; /* Evita barras de rolagem */
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden; 
     position: relative;
 }
 #container {
@@ -159,43 +159,43 @@ body {
 }
 #info-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
-    gap: 10px; /* Espaço entre as colunas */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    margin: 10px auto; /* Centraliza verticalmente e define margens */
-    max-width: 80%; /* Define a largura máxima */
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    justify-content: center;
+    margin: 10px auto; 
+    max-width: 80%; 
     height: 20vh;
     margin-top: 2rem;
 }
 
 .info {
-    margin: 10px; /* Espaçamento entre informações */
+    margin: 10px;
     display: flex;
     font-size: 26px;
-    flex-direction: column; /* Coloca os ícones acima dos valores */
-    align-items: center; /* Centraliza verticalmente o conteúdo das divs .info */
-    padding: 10px; /* Espaçamento interno das divs .info */
-    text-align: center; /* Centraliza o texto horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px;
+    text-align: center; 
     height: 30vh;
     margin-left: 50px;
     margin-right: 50px;
 }
 #map {
     width: 100%;
-    height: 70vh; /* Reduza a altura do mapa para ficar mais próximo das informações */
-    margin-top: 20px; /* Adicione uma margem superior para separar o mapa das informações */
+    height: 70vh; 
+    margin-top: 20px; 
     margin-bottom: 2rem;
 }
 #btn-container {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px; /* Adicione uma margem inferior para separar o botão do mapa */
+    margin-bottom: 10px; 
 }
 #btn-container button {
     padding: 10px 20px;
 }
 .icon {
-    align-items: center; /* Adicione margem à direita do ícone para separá-lo do texto */
+    align-items: center; 
 }
 button {
     border: none;
@@ -211,7 +211,7 @@ button {
 
 button.special-button {
     border: none;
-    border-radius: 50%; /* Para tornar os botões redondos */
+    border-radius: 50%; 
     color: white;
     background: #004A2F;
     cursor: pointer;
@@ -227,14 +227,14 @@ button.special-button:disabled {
 
 .button-container {
     display: inline-block;
-    margin: 0 5px; /* Adiciona espaço horizontal entre os contêineres */
+    margin: 0 5px; 
     margin-top: 2rem;
     margin-left: 1.5rem;
 }
 
 .button-row {
-    display: flex; /* Torna os contêineres elementos flexíveis */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
+    display: flex; 
+    justify-content: center; 
 }
 
 .btn-main {
@@ -257,14 +257,14 @@ textarea {
 
 .media-container {
     width: 100%;
-    height: 50vh; /* Defina a altura inicial para corresponder à do vídeo */
-    position: relative; /* Adicione position: relative; para posicionar os elementos filhos */
+    height: 50vh; 
+    position: relative; 
 }
 
 #capturedImage {
     max-width: 100%;
-    height: auto; /* Defina a altura inicial para corresponder à do vídeo */
-    height: auto; /* Ajusta automaticamente a altura da imagem para manter a proporção */
+    height: auto; 
+    height: auto; 
 }
 
 video{
@@ -278,29 +278,29 @@ video{
 
 /* GALERIA DE DENUNCIAS  */
 body.scroll-enabled {
-    overflow: auto; /* Habilita a barra de rolagem */
+    overflow: auto; 
 }
 .galeria {
     display: flex;
-    flex-direction: column; /* Define a direção para coluna (uma abaixo da outra) */
-    align-items: left; /* Centralize as imagens horizontalmente */
-    border-bottom: 1px solid #ccc; /* Adicione uma borda inferior com cor cinza */
+    flex-direction: column; 
+    align-items: left; 
+    border-bottom: 1px solid #ccc;
 }
 
 .imagem-com-texto {
-    display: flex; /* Usar flexbox para posicionar a imagem e o texto lado a lado */
-    align-items: center; /* Centralize verticalmente */
-    margin-bottom: 10px; /* Adicione margem inferior para espaçamento entre as imagens */
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
 }
 
 .imagem-com-texto img {
-    width: 200px; /* Defina a largura da imagem */
-    height: 200px; /* Mantenha a proporção original da altura */
-    margin-right: 10px; /* Adicione margem à direita da imagem para separá-la do texto */
+    width: 200px; 
+    height: 200px; 
+    margin-right: 10px; 
 }
 
 .imagem-com-texto p {
-    margin: 0; /* Remova a margem padrão do parágrafo */
+    margin: 0; 
 }
 
 
@@ -308,30 +308,30 @@ body.scroll-enabled {
 /*  SOBRE  */
 .developer-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
-    gap: 20px; /* Espaçamento entre as fotos */
-    justify-content: center; /* Centralize o conteúdo horizontalmente */
-    align-items: center; /* Centralize o conteúdo verticalmente */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center; 
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 3rem;
 }
 
 .developer {
-    text-align: center; /* Centralize o conteúdo dentro de cada célula */
+    text-align: center; 
 }
 
 /* Estilize as imagens, se necessário */
 .developer img {
     margin-top: 2rem;
     height: 150px;
-    width: 150px; /* Defina a largura máxima das imagens */
+    width: 150px; 
 }
 
 .about-h2 {
     font-family: 'Inter', sans-serif;
-    text-align: center; /* Centralize o texto */
-    font-family: 'Inter', sans-serif; /* Defina a fonte como Sans-Serif */
+    text-align: center; 
+    font-family: 'Inter', sans-serif; 
     margin-top: 2rem;
     margin-bottom: 1rem;
 
