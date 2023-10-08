@@ -4,10 +4,14 @@
 
 // Função para iniciar o mapa com a localização atual
 function initMap(latitude, longitude) {
+    if (typeof latitude !== 'number' || isNaN(latitude) || typeof longitude !== 'number' || isNaN(longitude)) {
+        return;
+    }
+    
     const mapDiv = document.getElementById('map');
     const mapOptions = {
         center: { lat: latitude, lng: longitude },
-        zoom: 15
+        zoom: 14
     };
     const map = new google.maps.Map(mapDiv, mapOptions);
 
