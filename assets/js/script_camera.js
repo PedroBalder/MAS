@@ -1,5 +1,5 @@
 // JAVASCRIPT VISUALIZAR CAMERA
-
+//
 
 var video = document.querySelector('video');
 var captureButton = document.getElementById('captureButton');
