@@ -51,3 +51,4 @@ if ('geolocation' in navigator) {
     alert('A geolocalização não é suportada neste navegador.');
 }
 
+initMap()
