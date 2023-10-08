@@ -1,10 +1,10 @@
-// Tempo em milissegundos para a transição
+// Tempo em milissegundos
 const transitionTime = 3000; // 3 segundos
 
-// Função para redirecionar para a próxima tela após o tempo de transição
+
 function redirectToNextScreen() {
-    window.location.href = 'index.html'; // Substitua com a URL da próxima tela
+    window.location.href = 'index.html'; 
 }
 
-// Mostra a tela de transição por um período de tempo e, em seguida, redireciona
+// Mostra a tela de transição
 setTimeout(redirectToNextScreen, transitionTime);

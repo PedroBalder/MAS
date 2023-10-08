@@ -1,8 +1,8 @@
 //   JAVASCRIPT TEMPERATURA
 
-// Verificar se o navegador suporta geolocalização
+// Verifica se o navegador suporta GPS
 if ('geolocation' in navigator) {
-    // Solicitar a localização do dispositivo
+
     navigator.geolocation.getCurrentPosition(function (position) {
         const latitude = parseFloat(position.coords.latitude);
         const longitude = parseFloat(position.coords.longitude);
@@ -14,15 +14,14 @@ if ('geolocation' in navigator) {
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
 
-        // Realiza uma solicitação GET à API
+        //  GET Temperatura
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
-            // Dados de temperatura e umidade do ar
+            // Temperatura e Umidade
             const temperatura = Math.trunc(data.main.temp);
             const umidade = data.main.humidity;
 
-            // Selecione as divs de "Informação 1" e "Informação 2" pelo ID e atualize seu conteúdo
             const temperaturaDiv = document.getElementById('temperatura');
             const umidadeDiv = document.getElementById('umidade');
 
@@ -34,7 +33,6 @@ if ('geolocation' in navigator) {
             console.error('Erro ao buscar dados de temperatura e umidade:', error);
         });
   
-      // Agora você pode usar as variáveis "latitude" e "longitude" conforme necessário
     }, function (error) {
       switch (error.code) {
         case 1:

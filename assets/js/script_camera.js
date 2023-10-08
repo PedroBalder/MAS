@@ -15,7 +15,7 @@ var globalLatitude;
 var globalLongitude;
 
 navigator.mediaDevices.getUserMedia({video: { 
-    facingMode: 'environment' // Defina a restrição para a câmera principal
+    facingMode: 'environment' // Restricao para a camera principal
 } }).then(stream => {
     video.srcObject = stream;
     video.play();
@@ -30,13 +30,11 @@ captureButton.addEventListener('click', () => {
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0);
 
-    // Exibe a imagem capturada e oculta o vídeo e o botão "Tirar Foto"
     capturedImage.src = canvas.toDataURL();
     capturedImage.style.display = 'block';
     video.style.display = 'none';
     captureButton.style.display = 'none';
 
-    // Mostra o botão "Tirar Nova Foto"
     newCaptureButton.style.display = 'block';
     textValue = textInput.value;
     if (textValue.trim() !== '') {
@@ -46,8 +44,9 @@ captureButton.addEventListener('click', () => {
     }
 });
 
+//Verificacao se há texto no campo para mudar o estado do botão de enviar
 textInput.addEventListener('input', () => {
-    // Verifica se há texto no campo textInput
+
     textValue = textInput.value;
     if (textValue.trim() !== '' && capturedImage.src) {
         submitButton.disabled = false;
@@ -57,11 +56,10 @@ textInput.addEventListener('input', () => {
 });
 
 newCaptureButton.addEventListener('click', () => {
-    // Oculta a imagem e o botão "Tirar Nova Foto"
+
     capturedImage.style.display = 'none';
     newCaptureButton.style.display = 'none';
 
-    // Exibe o vídeo e o botão "Tirar Foto"
     video.style.display = 'block';
     captureButton.style.display = 'block';
     submitButton.disabled = true;
@@ -71,10 +69,9 @@ emailjs.init('DgLxhBhqINSWrESVO');
 
 submitButton.addEventListener('click', () => {
     canvas.toBlob(function (blob) {
-        imagemBlob = blob; //Armazenando imagem tipo blob na variável global
+        imagemBlob = blob; // Mudar imagem para .png para salvar em repositório
     });
 
-    //Armazenando texto
     textValue = textInput.value;
 
     if (navigator.onLine) {

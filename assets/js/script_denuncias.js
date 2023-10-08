@@ -1,11 +1,8 @@
 
 //  PEGANDO TODAS AS DENUNCIAS DO BANCO DE DADOS  
 
-// Função para buscar dados da API
 
-
-
-// Função para carregar JSON
+// Função para carregar JSON local
 function carregarDenunciasLocais() {
     fetch('assets/json/denuncia.json') 
         .then(response => response.json()) 
@@ -19,30 +16,31 @@ function carregarDenunciasLocais() {
 
 
 
-// Função para mostrar as denúncias no HTML
+//Exibição das denuncias
 function mostrarDenuncias(denunciasObj) {
     const galeria = document.querySelector('.galeria');
 
     galeria.innerHTML = '';
 
-    // Verifica se denunciasObj contém a propriedade "denuncia" e se é um array
+
     if (denunciasObj && Array.isArray(denunciasObj.denuncia)) {
-        const denuncias = denunciasObj.denuncia; // Acesse o array de denúncias
+        const denuncias = denunciasObj.denuncia; 
 
         denuncias.forEach(denuncia => {
+            //Div
             const divImagemTexto = document.createElement('div');
             divImagemTexto.classList.add('imagem-com-texto');
 
-            // Exibir a imagem
+            //Imagem
             const img = document.createElement('img');
             img.src = denuncia.imagem;
-
+            //Div de informacoes da denuncia
             const divTextoData = document.createElement('div');
             divTextoData.classList.add('texto-e-data');
-
+            //Texto da denuncia
             const pTexto = document.createElement('p');
             pTexto.textContent = denuncia.textoDenuncia;
-
+            //Data da denuncia
             const pData = document.createElement('p');
             pData.classList.add('data');
             pData.textContent = formatarData(denuncia.data);
@@ -63,7 +61,7 @@ function mostrarDenuncias(denunciasObj) {
     console.error('O objeto denuncias não contém a propriedade "denuncia" ou não é um array:', denunciasObj);
 }
 }
-// Chame a função para carregar os dados do arquivo JSON local
+
 carregarDenunciasLocais();
 
 
