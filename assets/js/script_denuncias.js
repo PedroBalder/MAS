@@ -1,19 +1,9 @@
-/*
+
 //  PEGANDO TODAS AS DENUNCIAS DO BANCO DE DADOS  
 
 // Função para buscar dados da API
-function fetchDenuncias() {
-    fetch('https://masdb.onrender.com/denuncia')
-        .then(response => response.json()) // Converte a resposta para JSON
-        .then(data => {
-            // Manipule os dados aqui
-            mostrarDenuncias(data);
-        })
-        .catch(error => {
-            console.error('Erro ao buscar denúncias:', error);
-        });
-}
-*/
+
+
 
 // Função para carregar JSON
 function carregarDenunciasLocais() {
@@ -55,7 +45,7 @@ function mostrarDenuncias(denunciasObj) {
 
             const pData = document.createElement('p');
             pData.classList.add('data');
-            pData.textContent = denuncia.data;
+            pData.textContent = formatarData(denuncia.data);
 /*
         // Formata data para padrao
         const data = new Date(denuncia.data);
@@ -76,19 +66,32 @@ function mostrarDenuncias(denunciasObj) {
 // Chame a função para carregar os dados do arquivo JSON local
 carregarDenunciasLocais();
 
-/*
-// Função para formatar a data como "DD/MM/YYYY HH"
-function formatarData(data) {
-    const dia = String(data.getDate()).padStart(2, '0');
-    const mes = String(data.getMonth() + 1).padStart(2, '0');
-    const ano = data.getFullYear();
-    const horas = String(data.getHours()).padStart(2, '0');
 
-    
-    return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+
+function formatarData(dataString) {
+    const data = new Date(dataString);
+
+    const hora = data.toLocaleTimeString('pt-BR', { hour: '2-digit'});
+    const diaMesAno = data.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+    return `${hora}h ${diaMesAno}`;
 }
 
 // Chama o banco de dados
-fetchDenuncias();
 
+
+/*
+function fetchDenuncias() {
+    fetch('https://masdb.onrender.com/denuncia')
+        .then(response => response.json()) // Converte a resposta para JSON
+        .then(data => {
+            // Manipule os dados aqui
+            mostrarDenuncias(data);
+        })
+        .catch(error => {
+            console.error('Erro ao buscar denúncias:', error);
+        });
+}
+
+fetchDenuncias();
 */
