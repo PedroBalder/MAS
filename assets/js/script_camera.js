@@ -1,6 +1,8 @@
 // JAVASCRIPT VISUALIZAR CAMERA
 
 
+
+
 var video = document.querySelector('video');
 var captureButton = document.getElementById('captureButton');
 var newCaptureButton = document.getElementById('newCaptureButton');
@@ -66,15 +68,37 @@ newCaptureButton.addEventListener('click', () => {
     submitButton.disabled = true;
 });
 
+emailjs.init('DgLxhBhqINSWrESVO');
 
 submitButton.addEventListener('click', () => {
     canvas.toBlob(function (blob) {
-        imagemBlob = blob; //Armazenando imagem
+        imagemBlob = blob; //Armazenando imagem tipo blob na variável global
     });
 
     //Armazenando texto
     textValue = textInput.value;
 
+    if (navigator.onLine) {
+
+        const params = {
+            to_email: 'jose.maranhao@edu.pe.senac.br', 
+            subject: 'Denuncia Suape', 
+            message: textValue, 
+        };
+
+        emailjs.send('service_qkijf73', 'template_thik5b5', params)
+            .then((response) => {
+                console.log('E-mail enviado com sucesso', response);
+                window.location.href = 'html_denuncia_enviada.html';
+            })
+            .catch((error) => {
+                console.error('Erro ao enviar e-mail:', error);
+            });
+    } else {
+        // Caso o usuário nao esteja online
+        console.log('A PWA está offline. O e-mail será enviado quando estiver online.');
+    }
+    
     /*
     const formData = new FormData();
     formData.append('latitude', globalLatitude);
