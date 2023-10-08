@@ -1,0 +1,44 @@
+{
+    "denuncia": [
+        {
+            "id": "clnhjknw40000pc1whmda2wt9",
+            "latitude": -8.02708753358155,
+            "longitude": -34.90043775196011,
+            "imagem": "fotos/download(1).png",
+            "textoDenuncia": "lixo na rua",
+            "data": "2023-10-08T14:10:41.359Z"
+        },
+        {
+            "id": "clnhjlk1f0001pc1w59t3je4p",
+            "latitude": -8.03099704242301,
+            "longitude": -34.90030900593329,
+            "imagem": "fotos/download(2).png",
+            "textoDenuncia": "lixo na frente de comercio",
+            "data": "2023-10-08T14:11:23.186Z"
+        },
+        {
+            "id": "clnhjmdyv0002pc1wqeumlbid",
+            "latitude": -8.029297260593815,
+            "longitude": -34.90327016455008,
+            "imagem": "fotos/download(3).png",
+            "textoDenuncia": "lixo em ceu aberto",
+            "data": "2023-10-08T14:12:01.975Z"
+        },
+        {
+            "id": "clnhjn7jc0003pc1wg3e95c5m",
+            "latitude": -8.02645011009441,
+            "longitude": -34.90121022812101,
+            "imagem": "fotos/download(4).png",
+            "textoDenuncia": "lixo na avenida",
+            "data": "2023-10-08T14:12:40.296Z"
+        },
+        {
+            "id": "clnhjnvts0004pc1w170b3tdv",
+            "latitude": -8.029084787364964,
+            "longitude": -34.89687577855151,
+            "imagem": "fotos/download(5).png",
+            "textoDenuncia": "coleta de lixo",
+            "data": "2023-10-08T14:13:11.773Z"
+        }
+    ]
+}

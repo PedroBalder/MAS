@@ -1,5 +1,5 @@
 // JAVASCRIPT VISUALIZAR CAMERA
-//
+
 
 var video = document.querySelector('video');
 var captureButton = document.getElementById('captureButton');
@@ -8,8 +8,12 @@ var canvas = document.querySelector('canvas');
 var capturedImage = document.getElementById('capturedImage');
 var submitButton = document.getElementById('submitButton');
 var textInput = document.getElementById('textInput');
+var imagemBlob;
+var textValue;
+var globalLatitude;
+var globalLongitude;
 
-navigator.mediaDevices.getUserMedia({ video: { 
+navigator.mediaDevices.getUserMedia({video: { 
     facingMode: 'environment' // Defina a restrição para a câmera principal
 } }).then(stream => {
     video.srcObject = stream;
@@ -33,9 +37,22 @@ captureButton.addEventListener('click', () => {
 
     // Mostra o botão "Tirar Nova Foto"
     newCaptureButton.style.display = 'block';
-    submitButton.disabled = false;
+    textValue = textInput.value;
+    if (textValue.trim() !== '') {
+        submitButton.disabled = false;
+    } else {
+        submitButton.disabled = true;
+    }
+});
 
-    
+textInput.addEventListener('input', () => {
+    // Verifica se há texto no campo textInput
+    textValue = textInput.value;
+    if (textValue.trim() !== '' && capturedImage.src) {
+        submitButton.disabled = false;
+    } else {
+        submitButton.disabled = true;
+    }
 });
 
 newCaptureButton.addEventListener('click', () => {
@@ -49,31 +66,47 @@ newCaptureButton.addEventListener('click', () => {
     submitButton.disabled = true;
 });
 
+
 submitButton.addEventListener('click', () => {
-    // Obtenha a imagem do canvas como um arquivo PNG
     canvas.toBlob(function (blob) {
-        var imageUrl = URL.createObjectURL(blob);
-
-        // Crie um objeto de URL para o texto digitado
-        var textUrl = URL.createObjectURL(new Blob([textInput.value], { type: 'text/plain' }));
-
-        // Crie links para download dos arquivos
-        var imageLink = document.createElement('a');
-        imageLink.download = 'foto.png';
-        imageLink.href = imageUrl;
-
-        var textLink = document.createElement('a');
-        textLink.download = 'texto.txt';
-        textLink.href = textUrl;
-
-        // Simule o clique nos links de download
-        imageLink.click();
-        textLink.click();
+        imagemBlob = blob; //Armazenando imagem
     });
-    
-//    alert('Denuncia enviada com sucesso com sucesso!');
 
+    //Armazenando texto
+    textValue = textInput.value;
+
+    /*
+    const formData = new FormData();
+    formData.append('latitude', globalLatitude);
+    formData.append('longitude', globalLongitude);
+    formData.append('imagem', imagemBlob);
+    formData.append('textoDenuncia', textValue);
+
+    fetch('https://masdb.onrender.com/denuncia', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Denúncia enviada com sucesso!');
+            window.location.href = 'html_denuncia_enviada.html';
+        } else {
+            console.error('Erro ao enviar a denúncia.');
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao enviar a denúncia:', error);
+    });
+*/
     window.location.href = 'html_denuncia_enviada.html';
 });
 
+
+navigator.geolocation.getCurrentPosition(function (position) {
+    globalLatitude = parseFloat(position.coords.latitude);
+    globalLongitude = parseFloat(position.coords.longitude);
+    initMap(globalLatitude, globalLongitude);
+}, function (error) {
+    handleLocationError(error);
+});
 
