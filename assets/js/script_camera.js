@@ -2,7 +2,6 @@
 
 
 
-
 var video = document.querySelector('video');
 var captureButton = document.getElementById('captureButton');
 var newCaptureButton = document.getElementById('newCaptureButton');
@@ -129,7 +128,6 @@ submitButton.addEventListener('click', () => {
 navigator.geolocation.getCurrentPosition(function (position) {
     globalLatitude = parseFloat(position.coords.latitude);
     globalLongitude = parseFloat(position.coords.longitude);
-    initMap(globalLatitude, globalLongitude);
 }, function (error) {
     handleLocationError(error);
 });
