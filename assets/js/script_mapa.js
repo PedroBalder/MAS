@@ -55,9 +55,4 @@ if ('geolocation' in navigator) {
     alert('A geolocalização não é suportada neste navegador.');
 }
 
-const script = document.createElement('script');
-script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAU7Y3waGbIoZmPcHMM45bKmCiDNzYfoo4&libraries=places&callback=initMap';
-script.async = true;
-script.defer = true;
-document.head.appendChild(script);
 
