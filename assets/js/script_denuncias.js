@@ -77,13 +77,13 @@ function mostrarDenuncias(denunciasObj) {
 carregarDenunciasLocais();
 
 /*
-// Função para formatar a data como "DD/MM/YYYY HH:MM"
+// Função para formatar a data como "DD/MM/YYYY HH"
 function formatarData(data) {
     const dia = String(data.getDate()).padStart(2, '0');
     const mes = String(data.getMonth() + 1).padStart(2, '0');
     const ano = data.getFullYear();
     const horas = String(data.getHours()).padStart(2, '0');
-    const minutos = String(data.getMinutes()).padStart(2, '0');
+
     
     return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
 }
