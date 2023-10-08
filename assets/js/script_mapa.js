@@ -7,7 +7,7 @@ function initMap(latitude, longitude) {
     if (typeof latitude !== 'number' || isNaN(latitude) || typeof longitude !== 'number' || isNaN(longitude)) {
         return;
     }
-    
+
     const mapDiv = document.getElementById('map');
     const mapOptions = {
         center: { lat: latitude, lng: longitude },
@@ -55,4 +55,9 @@ if ('geolocation' in navigator) {
     alert('A geolocalização não é suportada neste navegador.');
 }
 
+const script = document.createElement('script');
+script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAU7Y3waGbIoZmPcHMM45bKmCiDNzYfoo4&libraries=places&callback=initMap';
+script.async = true;
+script.defer = true;
+document.head.appendChild(script);
 
